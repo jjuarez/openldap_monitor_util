@@ -1,0 +1,4 @@
+---
+  :url: 'ldaps://ldap.example.org'
+  :username: 'cn=admin,dc=example,dc=org'
+  :password: 'supersecret'
