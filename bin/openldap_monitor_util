@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.join(File.dirname(__FILE__), %w{.. lib})
+
+
+require 'openldap_monitor_util/options_parser'
+require 'openldap_monitor_util'
+
+
+##
+# ::main::
+OpenldapMonitorUtil::Cli.run(
+  :config =>Choice.choices[:config],
+  :key    =>Choice.choices[:key],
+  :output =>Choice.choices[:output]
+)

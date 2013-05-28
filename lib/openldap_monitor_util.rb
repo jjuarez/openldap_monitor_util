@@ -1,0 +1,1 @@
+require "openldap_monitor_util/cli"
