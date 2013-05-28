@@ -1,0 +1,4 @@
+---
+  :url: 'ldap://master.ldap.gestion.csic.es'
+  :username: 'cn=admin,dc=csic,dc=es'
+  :password: 'P3usu@r10'
