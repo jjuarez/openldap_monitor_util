@@ -11,7 +11,7 @@ module OpenldapMonitorUtil
       
       options = { :exception => $!, :error_code =>0 }.merge(options)
       
-      STDERR.puts( "Error: #{options[:exception].message}")
+      $stderr.puts( "Error: #{options[:exception].message}")
       Kernel.exit(options[:error_code])
     end
     
@@ -35,8 +35,8 @@ module OpenldapMonitorUtil
     def self.run(options)
     
       clean_key = Cli.clean_key(options[:key])
-      config    = YAML.load_file(options[:config])      
-      value     = ::OpenldapMonitorExtractor.configure(config).get(clean_key)
+      config    = YAML.load_file(options[:config])            
+      value     =  OpenldapMonitorExtractor::Core.new(config).get(clean_key).data
       
       Cli.do_output(value, options)
     rescue => ex
